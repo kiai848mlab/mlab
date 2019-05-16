@@ -25,7 +25,8 @@ SECRET_KEY = 'matl_b86q1jhkii#2ol)6rxw$7ifs(qodz+dd)%mf#%gosp1f-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# cf. https://docs.djangoproject.com/ja/2.2/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',      # django-debug-toolbar
+    'django_extensions',  # django-extensions
+    'import_export',      # django-import-export
+    'security',           # django-security
+    'django_filters',     # django-filters
+    'widget_tweaks',      # django-widget-tweaks
+    'betterforms',        # django-betterforms
+    'rest_framework',     # djangorestframework
 ]
 
 MIDDLEWARE = [
@@ -47,6 +56,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  # django-debug-toolbar
+    # django-security
+    'security.middleware.DoNotTrackMiddleware',
+    'security.middleware.ContentNoSniff',
+    'security.middleware.XssProtectMiddleware',
+    'security.middleware.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'

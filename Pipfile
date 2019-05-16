@@ -6,7 +6,17 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+django-choices = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+django-import-export = "*"
+django-security = "*"
+django-widget-tweaks = "*"
+django-filter = "*"
+django-betterforms = "*"
+djangorestframework = "*"
+Django = "*"
+Markdown = "*"
 
 [requires]
 python_version = "3.7"
