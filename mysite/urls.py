@@ -22,6 +22,7 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('initiation/', include('initiation.urls')),
 ]
 
 # django-debug-toolbar
